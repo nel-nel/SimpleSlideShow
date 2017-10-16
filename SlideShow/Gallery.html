@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+<script src='js\jquery1-1.11.3.min.js'></script>
+<script src="js/dataFile.js"></script>
+<script src="js/onReadyHomepage.js"></script>
+<link rel="stylesheet" type="text/css" href='sass/gallery.css'>
+</head>
+<body>
+<header> <span id="galleryApp"> Gallery App </span>  </header>
+ <div id="wrap"> 
+  <h2 class="slideTitle"> Picture № <span id="pictureIndex"></span> out of <span id="all"> </span> 	
+  </h2> 
+  <div class='center'>
+         <img class="nav" id="leftNav" src="pic/arrLeft.gif" alt="" />
+		 <img class="nav" id="rightNav" src="pic/arrRight.gif" alt=""/> 
+ </div>
+<div id="slideshow">
+ <div id="slideshowWindow">  
+        <div class="slide">
+        	<img src="pic/slide1.jpg" />
+     			 <div class="slideText">
+                   <div>Триград</div> 
+                 </div>
+        </div>
+      
+       <div class="slide">
+       		<img  src="pic/slide3.jpg"/>
+       			<div class="slideText">
+       			   <div>Стара Загора</div>
+                 </div>
+        </div>
+        
+        <div class="slide">
+         	<img src="pic/slide7.jpg" />
+        		<div class="slideText">
+        			<div>Лалета</div>
+                 </div>
+        </div>
+        <div class="slide">
+         	<img src="pic/slide8.jpg" />
+        		<div class="slideText">
+        		<div>Люлин</div>
+                 </div>
+        </div>
+  </div>    
+ </div>
+
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+		docReady();
+	});	
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Galery</title>
+<script src='js\jquery1-1.11.3.min.js' ></script>
+<script src="js/dataFile.js"></script>
+<link rel="stylesheet" type="text/css" href='sass/gallery.css'>
+</head>
+<body>
+<a id='back' href='#'> Обратно към слайдшоуто</a>
+<h1 id="title"></h1>
+<img src="" id="pic" alt="" />
+<div class="describe">
+<div class="table"> 
+<h2 class='row'>Описание</h2>
+<div class='row' id="description"></div>
+<div class='row' id = "tags"> </div> 
+<div class='row'> Копирайте URL на снимката: <span id="url"></span> </div>
+ </div>
+ </div> 
+ <a href="#title">
+  <div class="all">
+	<div id="slideshowWindowHeader">
+			<div class="slideHeader">
+	        	<img src="pic/slide1.jpg" />
+	       </div>
+	        <div class="slideHeader">
+	           <img src="pic/slide3.jpg" />
+	        </div>       
+
+	        <div class="slideHeader">
+	         	<img src="pic/slide7.jpg" />
+	        </div>
+	         <div class="slideHeader">
+	         	<img src="pic/slide8.jpg" />
+	        </div>
+	</div>
+ </div>
+</a> 
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	var localUrl = location.href;
+	var title = document.getElementById('title');
+	var pic = document.getElementById('pic');
+	var tags = document.getElementById('tags');
+	var description = document.getElementById('description');
+	var url = document.getElementById('url');
+	var back = document.getElementById("back");
+	var $img = $('img');	
+	$img.on('click', function(){
+		//console.log($(this));
+			var object = traverseData(imgData,'path', $(this));
+			$('#pic').attr('src', object.path);
+			$('#description').html( object.description); 
+			$('#title').html( object.name); 
+			$('#url').html( object.path); 
+			//window.location.assign("picturePage.html?name ="+path.name);
+});	
+ function getDataFromUrl(url){
+	var queryStart = url.indexOf("?") + 1;
+	queryEnd   = url.indexOf("#") + 1 || url.length + 1;
+	query = url.slice(queryStart, queryEnd - 1);
+	console.log(query);
+	pairs = query.replace(/\+/g, " ").split("=");
+	console.log(pairs);
+	var name = decodeURIComponent(pairs[1]);
+	console.log(name);
+	fillPage(name);
+	console.log(typeof name);
+};
+
+ function fillPage(param){
+	
+	for(var i = 0; i < imgData.length; i++){
+		var imgObject = JSON.parse(imgData[i]);
+		if (imgObject.name == param){
+			title.innerHTML = param;
+			pic.src = imgObject.path;
+			url.innerHTML = imgObject.path;
+			tags.innerHTML = 'Тагове: '+imgObject.tags;
+			description.innerHTML = imgObject.description;
+			return;
+		};
+	}
+};
+
+getDataFromUrl(localUrl);
+url.addEventListener('click', function (){
+		window.open(url.innerHTML,"_blank","width:100% , height:100%");
+});
+
+back.onclick = function(){
+	window.location.assign('Gallery.html');
+};
+});
+
+</script>
+
+</html>
