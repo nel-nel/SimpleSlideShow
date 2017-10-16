@@ -2,7 +2,10 @@ body {
   width: 100%;
   background-image: url("../pic/background.jpeg");
    }
-
+#wrap{
+width: 70%;	
+	
+}
 footer {
   text-align: center;
   background-color: black;

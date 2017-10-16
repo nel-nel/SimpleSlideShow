@@ -29,11 +29,9 @@ function docReady(){
 			clearInterval(slideShowInterval);
 			slideShowInterval = setInterval(changePosition, speed);
 			moveSlide(slideWidth, currentPosition);
-			console.log('end of nav function');
-		});
+	});
 		
 		$img.on('click', function(){
-			//console.log($(this));
 				var path = traverseData('path', $(this));
 				window.location.assign("picturePage.html?name ="+path.name);
 
@@ -54,20 +52,25 @@ function docReady(){
 		});
 		
 		function changePosition() {
-			if(currentPosition == (numberOfSlides-1)) {
+			if(currentPosition == (numberOfSlides-2)) {
 				currentPosition = 0;
 				manageNav(currentPosition);
 			} else {
 				currentPosition++;
 				manageNav(currentPosition);
 			};
+			
+			
 			moveSlide(slideWidth, currentPosition);
 		};
+		// move slides
 		function moveSlide(slideWidth,currentPosition) {
 			$('#slidesHolder')
-			  .animate({'marginLeft' : -slideWidth*(currentPosition)}, 100);
+			  .animate({'marginLeft' : -slideWidth*(currentPosition)}, 50);
+			   //counting the pictures
 			   picIndex.innerHTML= currentPosition + 1 ; 
-			};		
+			};
+			
 		function manageNav(position) {
 			//hide left arrow if position is first slide
 			if(position==0){ $('#leftNav').hide() }
