@@ -18,27 +18,27 @@
 <div class='row' id = "tags"> </div> 
 <div class='row'> Копирайте URL на снимката: <span id="url"></span> </div>
  </div>
- </div> 
+</div> 
  <a href="#title">
-  <div class="all">
+ <div class="all">
 	<div id="slideshowWindowHeader">
 			<div class="slideHeader">
 	        	<img src="pic/slide1.jpg" />
 	       </div>
 	        <div class="slideHeader">
-	           <img src="pic/slide3.jpg" />
+	           <img src="pic/slide6.jpg" />
 	        </div>       
-
 	        <div class="slideHeader">
 	         	<img src="pic/slide7.jpg" />
 	        </div>
-	         <div class="slideHeader">
+	        <div class="slideHeader">
 	         	<img src="pic/slide8.jpg" />
 	        </div>
 	</div>
  </div>
 </a> 
 </body>
+
 <script type="text/javascript">
 $(document).ready(function() {
 	var localUrl = location.href;
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	var $img = $('img');	
 	$img.on('click', function(){
 		//console.log($(this));
-			var object = traverseData(imgData,'path', $(this));
+			var object = traverseData('path', $(this));
 			$('#pic').attr('src', object.path);
 			$('#description').html( object.description); 
 			$('#title').html( object.name); 
@@ -68,7 +68,7 @@ $(document).ready(function() {
 	var name = decodeURIComponent(pairs[1]);
 	console.log(name);
 	fillPage(name);
-	console.log(typeof name);
+	//console.log(typeof name);
 };
 
  function fillPage(param){

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/|**/bower_components/*|jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/external/jquery/|**/node_modules/*|**/*.min.js" kind="src" path="SlideShow/js"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|external/jquery/|**/*.min.js" kind="src" path="SlideShow/js/jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="SlideShow/js/jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/external/jquery"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

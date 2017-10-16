@@ -1,5 +1,7 @@
 body {
-  width: 100%; }
+  width: 100%;
+  background-image: url("../pic/background.jpeg");
+   }
 
 footer {
   text-align: center;
@@ -17,13 +19,14 @@ header {
     float: right; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: white }
 
 .slideTitle {
   font-family: Charcoal, sans-serif;
   width: 600px;
   margin-left: 200px;
-  background-color: #000033; }
+}
   .slideTitle h2 {
     color: white;
     position: relative; }
@@ -113,7 +116,7 @@ a {
   width: 60%;
   margin-left: 7%;
   background-color: black;
-  opacity: 0.5; }
+  opacity: 1; }
 
 #pic {
   float: left;
@@ -133,7 +136,7 @@ a {
     height: 300px; } }
 h2 {
   background-color: black;
-  opacity: 0.5;
+  opacity:1;
   color: white; }
 
 #description {
@@ -143,7 +146,9 @@ h2 {
   float: left;
   width: 300px;
   margin-left: 7%;
-  display: table; }
+  display: table; 
+  color:white
+  }
 
 .row {
   display: table-row; }
